@@ -34,7 +34,7 @@ class Matriz
   end
 
   def imprime_invertida(entrada)
-  	puts "\nTABULEIRO INVERTIDO\n\n"
+  	puts "\nTABULEIRO DO CAÇA PALAVRAS\n\n"
   	entrada.each do |r|
     	puts r.each { |p| p }.join(' ')
 	  end

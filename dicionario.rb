@@ -42,7 +42,7 @@ class Dicionario
 	  				 num_linha = linha.size-(regex =~ linha)
 	  				 num_coluna = index+1
 	  				end
-	    			coordenadas << "No sentido "+sentido[valor]+" achou a cidade "+e+" na linha "+num_linha.to_s+" e na coluna "+num_coluna.to_s+"| -- |"
+	    			coordenadas << "| -- |No sentido "+sentido[valor]+" achou a cidade "+e+" na linha "+num_linha.to_s+" e na coluna "+num_coluna.to_s+"\n"
 	    		end
 		    end
  		end
@@ -55,7 +55,7 @@ class Dicionario
 	end
 
 def imprime
-	p coordenadas
+	printf(coordenadas)
 	
 end
 
