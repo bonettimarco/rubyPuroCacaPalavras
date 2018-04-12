@@ -7,5 +7,5 @@ class Carro
 	end
 end
 corsa = Carro.new(:chevrolet, :corsa, :preto, 50)
-#p corsa
+p corsa
 puts corsa
