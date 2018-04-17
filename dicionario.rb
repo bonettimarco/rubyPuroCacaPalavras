@@ -16,7 +16,7 @@ class Dicionario
   end
 
 
-  def encontra_palavra(tipo, matriz, tamanho, colunas)
+  def encontra_palavra(tipo, matriz, tamanho=nil, colunas=nil)
   	valor = 0
   	achou = 0
   	sentido = ["horizontal, esquerda para a direita","vertical de cima para baixo","horizontal, direita para a esquerda","vertical de baixo para cima","diagonal, cima para baixo, esquerda para a direita","diagonal, cima para baixo, esquerda para a direita","diagonal, baixo para cima, esquerda para a direita","diagonal, baixo para cima, direita para a esquerda"]

@@ -5,7 +5,8 @@ class Matriz
 	def initialize
   	@todas_as_matrizes = Array.new
   	@esquerda_direita = Array.new
-	  monta_matriz_base 
+	  matriz_referencia(12,29)
+	  #monta_matriz_base 
 	  @vertical_cima_baixo = @esquerda_direita.transpose
 	  @vertical_baixo_cima = @esquerda_direita.reverse.transpose
 	  @direita_esquerda = @vertical_baixo_cima.reverse.transpose.reverse
@@ -33,10 +34,12 @@ class Matriz
   	esquerda_direita << ['S','L','I','E','C','H','T','E','N','S','T','E','I','N','N','O','S','J','P','E','J','P','Q','E','W','P','Q','S','O']
   end
 
-  def matriz_referência
-  	(0..12).each do |linha|
-  		(0..29).each do |coluna|
-  		end
+  def matriz_referencia(m, n)
+  	sequencia = ""
+  	(0..m).each do |linha|
+  			n.times { sequencia << (65 + rand(25)).chr+" " }
+	  		esquerda_direita << sequencia.split
+	  		sequencia.clear
   	end
 
   	
