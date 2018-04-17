@@ -18,7 +18,10 @@ class RodaTesteCacaPalavras
 
 #bloco funcionando
 matriz = Matriz.new
-matriz.cria_diagonal
+#matriz.cria_diagonal
+matriz.imprime_invertida(matriz.esquerda_direita)
+matriz.imprime_invertida(matriz.diagonal_ascendente_esquerda_direita)
+matriz.imprime_invertida(matriz.diagonal_ascendente_direita_esquerda)
 
 cidades = Dicionario.new
 cidades.encontra_palavra('e_d', matriz.esquerda_direita)
@@ -27,11 +30,6 @@ cidades.encontra_palavra('c_b', matriz.vertical_cima_baixo)
 cidades.encontra_palavra('b_c', matriz.vertical_baixo_cima)
 cidades.encontra_palavra('d_b_c_e_d', matriz.diagonal_ascendente_esquerda_direita)
 cidades.imprime
-
-
-
-#teste diagonal
-#matriz.imprime_invertida(matriz.diagonal_ascendente_esquerda_direita)
 
 
 end

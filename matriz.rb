@@ -11,10 +11,11 @@ class Matriz
 #	  @vertical_baixo_cima = @direita_esquerda.reverse.transpose.reverse
 	  @vertical_baixo_cima = @esquerda_direita.reverse.transpose
 	  @direita_esquerda = @vertical_baixo_cima.reverse.transpose.reverse
-	  @diagonal_descendente_esquerda_direita = Array.new(@esquerda_direita.size+@esquerda_direita.size, Array.new(@esquerda_direita[0].size,nil))
-	  @diagonal_descendente_direita_esquerda = Array.new(@esquerda_direita.size+@esquerda_direita[0].size, Array.new(@esquerda_direita[0].size,nil))
 	  @diagonal_ascendente_esquerda_direita = Array.new
-	  @diagonal_ascendente_direita_esquerda = Array.new(@esquerda_direita.size+@esquerda_direita[0].size, Array.new(@esquerda_direita[0].size,nil))
+	  @diagonal_ascendente_direita_esquerda = Array.new
+	  cria_diagonal
+	  @diagonal_descendente_esquerda_direita = Array.new
+	  @diagonal_descendente_direita_esquerda = Array.new
  	  @todas_as_matrizes = [@esquerda_direita, @vertical_cima_baixo, @direita_esquerda, @vertical_baixo_cima]
 	end
 
@@ -30,11 +31,11 @@ class Matriz
   	esquerda_direita << ['C','O','R','T','D','J','R','I','G','O','G','H','D','I','R','O','S','S','U','J','O','D','F','J','T','S','O','F','O']
   	esquerda_direita << ['C','O','I','I','D','J','R','I','S','N','G','H','D','I','R','O','S','D','R','I','F','O','S','D','D','I','F','O','O']
   	esquerda_direita << ['C','W','R','I','D','J','R','I','S','E','P','A','C','I','R','O','S','S','E','E','R','I','J','W','O','E','W','S','O']
-  	esquerda_direita << ['S','O','E','C','H','T','E','N','S','T','E','I','N','N','N','O','S','J','P','E','J','P','Q','E','W','P','Q','S','O']
+  	esquerda_direita << ['S','L','I','E','C','H','T','E','N','S','T','E','I','N','N','O','S','J','P','E','J','P','Q','E','W','P','Q','S','O']
   end
 
 
-def cria_diagonal_b
+def invertecria_diagonal_b
   	colunas = esquerda_direita[0].size
   	printf (colunas.class.to_s)
 	
@@ -64,6 +65,7 @@ end
 					  	end
 				end
 				diagonal_ascendente_esquerda_direita << auxiliar.split("")
+				diagonal_ascendente_direita_esquerda << auxiliar.reverse.split("")
 				auxiliar.clear
 			if l < linhas_original-1
 				i = i + 1
