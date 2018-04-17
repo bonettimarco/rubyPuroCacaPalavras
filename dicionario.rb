@@ -18,7 +18,7 @@ class Dicionario
   def encontra_palavra(tipo, matriz)
   	valor = 0
   	achou = 0
-  	sentido = ["horizontal, esquerda para a direita","vertical de cima para baixo","horizontal, direita para a esquerda","vertical de baixo para cima","diagonal, cima para baixo, esquerda para a direita","horizontal, diagonal, cima para baixo, esquerda para a direita","diagonal, baixo para cima, esquerda para a direita","diagonal, baixo para cima, esquerda para a direita"]
+  	sentido = ["horizontal, esquerda para a direita","vertical de cima para baixo","horizontal, direita para a esquerda","vertical de baixo para cima","diagonal, cima para baixo, esquerda para a direita","diagonal, cima para baixo, esquerda para a direita","diagonal, baixo para cima, esquerda para a direita","diagonal, baixo para cima, esquerda para a direita"]
   	entrada.each do |e|
   		regex = Regexp.new(e.upcase)
   			matriz.each_with_index do |r,index|
@@ -41,6 +41,10 @@ class Dicionario
 	  					valor = 3
 	  				 num_linha = linha.size-(regex =~ linha)
 	  				 num_coluna = index+1
+	  				elsif tipo=='d_b_c_e_d'
+	  					valor = 5
+	  				 num_linha = index+1
+	  				 num_coluna = (regex =~ linha)+1
 	  				end
 	    			coordenadas << "| -- |No sentido "+sentido[valor]+" achou a cidade "+e+" na linha "+num_linha.to_s+" e na coluna "+num_coluna.to_s+"\n"
 	    		end
