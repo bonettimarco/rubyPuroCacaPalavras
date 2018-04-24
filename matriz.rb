@@ -5,8 +5,8 @@ class Matriz
 	def initialize
   	@esquerda_direita = Array.new
 	  # usada para encontrar palavras em todos os setidos na matriz abaixo montada na mão
-	  monta_matriz_base
-	  #matriz_objeto(12, 29)
+	  #monta_matriz_base
+	  matriz_objeto(19, 28)
 	  @vertical_baixo_cima = @esquerda_direita.reverse.transpose
 	  @direita_esquerda = @vertical_baixo_cima.reverse.transpose.reverse
 	  @vertical_cima_baixo = @direita_esquerda.transpose.reverse
@@ -53,8 +53,8 @@ end
   def matriz_objeto(m, n)
   	letra_local = LetraLocal.new
   	sequencia = Array.new
-  	(0..11).each do |linha|
-  			(0..28).each do |coluna|
+  	(0..m-1).each do |linha|
+  			(0..n-1).each do |coluna|
   				letra_local.linha = linha
   				letra_local.coluna = coluna
   				letra_local.letra = ('A'..'Z').to_a.sample #(65 + rand(25)).chr
@@ -104,12 +104,20 @@ end
 
   def imprime(entrada)
   	puts "\nTABULEIRO DO CAÇA PALAVRAS\n\n"
-  	puts "1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29"
+  	linha = 1
+  	(1..entrada[0].length.to_i).each do |n|
+  	 printf(n.to_s+" ")
+  	 if n<10
+  	 	printf(" ")
+  	 end
+  	end
+  	printf("\n")
   	entrada.each do |r|
     	r.each do |s|
     		printf(s.letra+"  ")
     	end
-    	printf("\n")
+    	printf(" "+linha.to_s+"\n")
+    	linha = linha+1
 	  end
 	  printf("\n\n")
   	

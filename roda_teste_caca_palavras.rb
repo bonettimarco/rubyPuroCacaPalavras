@@ -15,7 +15,7 @@ matriz.imprime(matriz.esquerda_direita)
 #matriz.imprime(matriz.diagonal_descendente_esquerda_direita)
 #matriz.imprime(matriz.diagonal_descendente_direita_esquerda)
 cidades = Dicionario.new
-cidades.encontra_paises
+cidades.encontra_paises(matriz)
 
 end
 
