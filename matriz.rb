@@ -6,7 +6,7 @@ class Matriz
   	@esquerda_direita = Array.new
 	  # usada para encontrar palavras em todos os setidos na matriz abaixo montada na mão
 	  #monta_matriz_com_diversos_paises
-	  matriz_objeto(40, 40)
+	  matriz_objeto(100, 40)
 	  @vertical_baixo_cima = @esquerda_direita.reverse.transpose
 	  @direita_esquerda = @vertical_baixo_cima.reverse.transpose.reverse
 	  @vertical_cima_baixo = @direita_esquerda.transpose.reverse
@@ -119,5 +119,5 @@ class Matriz
   	end
   end
 
-  
+
 end
