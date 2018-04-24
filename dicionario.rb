@@ -3,9 +3,15 @@ class Dicionario
 
   attr_reader :coordenadas, :entrada, :matriz, :coordenadas_esquerda_direita, :coordenadas_direita_esquerda
 
-  def initialize(hash)
-	  @entrada = hash;
- 		@coordenadas=""
+  def initialize(caminho)
+  	if caminho
+			file = File.read(caminho)
+			@entrada = JSON.parse(file)
+	 		@coordenadas=""
+  	else
+	  		raise "Para localizar palavras, digite no prompt o local do dicionário: ruby roda_teste_caca_palavras.rb 'path_do_arquivo/paises.json'"  
+  	end  
+
   end
 
   def dicionario_to_s

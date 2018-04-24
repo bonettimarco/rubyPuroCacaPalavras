@@ -6,12 +6,9 @@ require 'json'
 
 class RodaTesteCacaPalavras
 
-caminho = ARGV[0] 
-file = File.read(caminho)
-data_hash = JSON.parse(file)
 matriz = Matriz.new
 matriz.imprime(matriz.esquerda_direita)
-cidades = Dicionario.new(data_hash)
+cidades = Dicionario.new(ARGV[0])
 cidades.encontra_paises(matriz)
 
 end

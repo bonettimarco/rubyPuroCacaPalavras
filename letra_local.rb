@@ -7,9 +7,6 @@ class LetraLocal
 		@linha = linha
 		@coluna = coluna
 	end
-	def to_s
-		"#{letra} (#{linha}, #{coluna})"
-		
-	end
+
 
 end
